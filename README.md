@@ -10,7 +10,7 @@ Built using:
 - Container Queries
 - WCAG 2.1 AA Accessibility Standards
 
----
+
 
 ## Pages
 
@@ -33,7 +33,7 @@ Built using:
 - Accessibility statement
 - Contact section
 
----
+
 
 ## Project Structure
 
@@ -62,7 +62,7 @@ Built using:
 
 > The CSS is already compiled — no build step is required to run the site.
 
----
+
 
 ## Design System
 
@@ -94,11 +94,11 @@ All colour combinations meet WCAG 2.1 AA contrast requirements.
 - **Flexbox** → Navigation, cards, inline components
 - **Container Queries** → Story cards switch layout at 500px container width
 
----
+
 
 ## Accessibility Features (WCAG 2.1 AA)
 
-### 🎵 Media Accessibility
+### Media Accessibility
 - [x] Full transcript section for audio
 - [x] Closed captions (WebVTT) for video
 - [x] Audio descriptions track included
@@ -107,7 +107,7 @@ All colour combinations meet WCAG 2.1 AA contrast requirements.
 - [x] Downloadable transcript file
 - [x] Honest "Coming Soon" note for full documentary
 
-### ⌨️ Navigation & Interaction
+###  Navigation & Interaction
 - [x] Skip-to-content link on every page
 - [x] Full keyboard accessibility
 - [x] 3px visible focus ring
@@ -116,21 +116,21 @@ All colour combinations meet WCAG 2.1 AA contrast requirements.
 - [x] Breadcrumb navigation
 - [x] Keyboard-accessible "Copy Link" button
 
-### 🏗 Semantic HTML
+###  Semantic HTML
 - [x] One `<h1>` per page
 - [x] Logical heading hierarchy (h1 → h2 → h3)
 - [x] Landmark roles (`<header>`, `<main>`, `<footer>`, `<aside>`, `<nav>`)
 - [x] Proper use of `<article>`, `<section>`, `<figure>`, `<figcaption>`
 - [x] Decorative elements marked `aria-hidden="true"`
 
-### 🎭 Motion & Preferences
+###  Motion & Preferences
 - [x] `prefers-reduced-motion` supported
 - [x] Animations disabled when requested
 - [x] No flashing or autoplaying media
 
----
 
-## 🎬 Media Files Used
+
+##  Media Files Used
 
 | File | Type | Purpose |
 |------|------|---------|
@@ -140,7 +140,7 @@ All colour combinations meet WCAG 2.1 AA contrast requirements.
 
 > The audio file is a short preview. The full documentary is marked as "Coming Soon."
 
----
+
 
 ## Running Locally
 
@@ -160,7 +160,7 @@ npx http-server . -p 8080
 **Option 3 – VS Code**
 Right-click `index.html` → Open with Live Server
 
----
+
 
 ## Recompiling Sass (Optional)
 
@@ -179,7 +179,7 @@ Watch for changes:
 sass --watch sass/main.scss css/main.css
 ```
 
----
+
 
 ## Browser Support
 
@@ -192,4 +192,3 @@ sass --watch sass/main.scss css/main.css
 
 ---
 
-© 2026 StoryCast. Content freely available under Creative Commons CC BY 4.0.
