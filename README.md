@@ -1,56 +1,43 @@
-## StoryCast
+# StoryCast
 
-StoryCast is a 3-page accessible microsite for audio and video storytelling.
-It celebrates culture, arts, and the human experience through immersive multimedia narratives.
+StoryCast is a 3-page accessible microsite for audio and video storytelling. It celebrates culture, arts, and the human experience through immersive multimedia narratives.
 
 Built using:
+- Semantic HTML5
+- Sass (SCSS)
+- CSS Grid
+- Flexbox
+- Container Queries
+- WCAG 2.1 AA Accessibility Standards
 
-Semantic HTML5
+---
 
-Sass (SCSS)
+## Pages
 
-CSS Grid
+### Home (index.html)
+- Hero introduction section
+- Featured story highlight
+- 6-card responsive story grid
+- Mission statement strip
 
-Flexbox
+### Story Detail (story/threads-of-time.html)
+- Audio player (music preview)
+- Story image with caption
+- Embedded video with captions
+- Transcript section
+- Sidebar with structured story metadata
 
-Container Queries
+### About / Access (about.html)
+- Mission and values
+- How stories are produced
+- Accessibility statement
+- Contact section
 
-WCAG 2.1 AA Accessibility Standards
+---
 
-Pages
-Home (index.html)
+## Project Structure
 
-Hero introduction section
-
-Featured story highlight
-
-6-card responsive story grid
-
-Mission statement strip
-
-Story Detail (story/threads-of-time.html)
-
-Audio player (music preview)
-
-Story image with caption
-
-Embedded video with captions
-
-Transcript section
-
-Sidebar with structured story metadata
-
-About / Access (about.html)
-
-Mission and values
-
-How stories are produced
-
-Accessibility statement
-
-Contact section
-
-Project Structure
+```
 /
 ├── index.html
 ├── about.html
@@ -71,141 +58,138 @@ Project Structure
 │   ├── video/
 │   └── transcripts/
 └── README.md
+```
 
-The CSS is already compiled — no build step is required to run the site.
+> The CSS is already compiled — no build step is required to run the site.
 
-Design System
-Colour Palette (Warm & Earthy)
+---
 
-Terracotta (#c97d4e) – Primary accent & buttons
+## Design System
 
-Bark (#3d2b1f) – Primary text
+### Colour Palette (Warm & Earthy)
 
-Cream (#faf6f0) – Page background
-
-Ochre (#d4a853) – Focus ring & highlights
-
-Sage (#6b8f71) – Tags & placeholders
-
-Warm Gray (#b5a495) – Muted labels
+| Token | Hex | Use |
+|-------|-----|-----|
+| Terracotta | `#c97d4e` | Primary accent & buttons |
+| Bark | `#3d2b1f` | Primary text |
+| Cream | `#faf6f0` | Page background |
+| Ochre | `#d4a853` | Focus ring & highlights |
+| Sage | `#6b8f71` | Tags & placeholders |
+| Warm Gray | `#b5a495` | Muted labels |
 
 All colour combinations meet WCAG 2.1 AA contrast requirements.
 
-Typography
+### Typography
 
-Playfair Display – Headings & titles
+| Font | Use |
+|------|-----|
+| Playfair Display | Headings & titles |
+| Lora | Body text |
+| Playfair Display SC | Navigation labels |
+| Courier Prime | Transcript content |
 
-Lora – Body text
+### Layout & Responsive Strategy
 
-Playfair Display SC – Navigation labels
+- **CSS Grid** → Page-level layouts (hero, story grid, footer)
+- **Flexbox** → Navigation, cards, inline components
+- **Container Queries** → Story cards switch layout at 500px container width
 
-Courier Prime – Transcript content
+---
 
-Layout & Responsive Strategy
+## Accessibility Features (WCAG 2.1 AA)
 
-CSS Grid → Page-level layouts (hero, story grid, footer)
+### 🎵 Media Accessibility
+- [x] Full transcript section for audio
+- [x] Closed captions (WebVTT) for video
+- [x] Audio descriptions track included
+- [x] Captions set to default ON
+- [x] Fallback text inside `<audio>` and `<video>`
+- [x] Downloadable transcript file
+- [x] Honest "Coming Soon" note for full documentary
 
-Flexbox → Navigation, cards, inline components
+### ⌨️ Navigation & Interaction
+- [x] Skip-to-content link on every page
+- [x] Full keyboard accessibility
+- [x] 3px visible focus ring
+- [x] Accessible mobile navigation with ARIA attributes
+- [x] Escape key closes mobile menu
+- [x] Breadcrumb navigation
+- [x] Keyboard-accessible "Copy Link" button
 
-Container Queries → Story cards switch layout at 500px container width
+### 🏗 Semantic HTML
+- [x] One `<h1>` per page
+- [x] Logical heading hierarchy (h1 → h2 → h3)
+- [x] Landmark roles (`<header>`, `<main>`, `<footer>`, `<aside>`, `<nav>`)
+- [x] Proper use of `<article>`, `<section>`, `<figure>`, `<figcaption>`
+- [x] Decorative elements marked `aria-hidden="true"`
 
-Accessibility Features (WCAG 2.1 AA)
-Media Accessibility
+### 🎭 Motion & Preferences
+- [x] `prefers-reduced-motion` supported
+- [x] Animations disabled when requested
+- [x] No flashing or autoplaying media
 
-Full transcript section for audio
+---
 
-Closed captions (WebVTT) for video
+## 🎬 Media Files Used
 
-Audio descriptions track included
+| File | Type | Purpose |
+|------|------|---------|
+| `african_music.mp3` | Audio | Audio preview in player |
+| `weaving_process.mp4` | Video | Video section embed |
+| `finished_product.jpg` | Image | Story image with caption |
 
-Captions set to default ON
+> The audio file is a short preview. The full documentary is marked as "Coming Soon."
 
-Fallback text inside <audio> and <video>
+---
 
-Downloadable transcript file
-
-Honest “Coming Soon” note for full documentary
-
-⌨ Navigation & Interaction
-
-Skip-to-content link on every page
-
-Full keyboard accessibility
-
-3px visible focus ring
-
-Accessible mobile navigation with ARIA attributes
-
-Escape key closes mobile menu
-
-Breadcrumb navigation
-
-Keyboard-accessible “Copy Link” button
-
-Semantic HTML
-
-One <h1> per page
-
-Logical heading hierarchy
-
-Landmark roles (<header>, <main>, <footer>)
-
-Proper use of <article>, <section>, <figure>, <aside>
-
-Decorative elements marked aria-hidden="true"
-
-Motion & Preferences
-
-prefers-reduced-motion supported
-
-Animations disabled when requested
-
-No flashing or autoplaying media
-
-🎬 Media Files Used
-
-african_music.mp3 → Audio preview
-
-weaving_process.mp4 → Video section
-
-finished_product.jpg → Story image
-
-The audio file is a short preview. The full documentary is marked as “Coming Soon.”
-
-Running Locally
+## Running Locally
 
 No build step required.
 
-Option 1 – Python
+**Option 1 – Python**
+```bash
 python3 -m http.server 8080
-
+```
 Open: http://localhost:8080
 
-Option 2 – Node
+**Option 2 – Node**
+```bash
 npx http-server . -p 8080
-Option 3 – VS Code
+```
 
-Right-click index.html → Open with Live Server
+**Option 3 – VS Code**
+Right-click `index.html` → Open with Live Server
 
-Recompiling Sass (Optional)
+---
+
+## Recompiling Sass (Optional)
 
 Install Sass:
-
+```bash
 npm install -g sass
+```
 
 Compile:
-
+```bash
 sass sass/main.scss css/main.css
+```
 
 Watch for changes:
-
+```bash
 sass --watch sass/main.scss css/main.css
-Browser Support
+```
 
-Chrome 108+
+---
 
-Firefox 110+
+## Browser Support
 
-Safari 16+
+| Browser | Version |
+|---------|---------|
+| Chrome | 108+ |
+| Firefox | 110+ |
+| Safari | 16+ |
+| Edge | 108+ |
 
-Edge 108+
+---
+
+© 2026 StoryCast. Content freely available under Creative Commons CC BY 4.0.
