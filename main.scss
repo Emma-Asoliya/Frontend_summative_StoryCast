@@ -1,0 +1,22 @@
+// ============================================================
+// StoryCast – main.scss
+// Entry point: imports all partials in dependency order
+// ============================================================
+
+// 1. Design Tokens
+@use 'colors';
+@use 'typography';
+@use 'spacing';
+
+// 2. Base & Reset
+@use 'base';
+
+// 3. Layout
+@use 'layout';
+
+// 4. Components
+@use 'components';
+
+// ── Google Fonts Import ──────────────────────────────────────
+// (placed at top of compiled CSS via @import in HTML <link> for performance)
+// Families: Playfair Display, Playfair Display SC, Lora, Courier Prime

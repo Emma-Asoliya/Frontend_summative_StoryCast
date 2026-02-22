@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="StoryCast — A platform for audio and video storytelling celebrating culture, arts, and the human experience." />
+
+  <title>StoryCast – Stories That Move You</title>
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;1,700&family=Playfair+Display+SC:wght@400;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ══════════════════════════════════════════════
+       SITE HEADER
+  ══════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-header__logo" aria-label="StoryCast — Home">
+        Story<span>Cast</span>
+      </a>
+
+      <!-- Mobile nav toggle -->
+      <button
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        aria-label="Open navigation menu"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav aria-label="Primary navigation">
+        <ul class="site-nav" id="primary-nav" role="list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="/Html/story.html">Stories</a></li>
+          <li><a href="/Html/about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ── HERO ──────────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <!-- Decorative background — hidden from AT -->
+      <div class="hero__bg" aria-hidden="true"></div>
+      <!-- Hero bg image replaced by CSS gradient for accessibility; real image would have alt="" as decorative -->
+      <div aria-hidden="true" style="
+        position:absolute;inset:0;
+        background: radial-gradient(ellipse at 70% 40%, rgba(201,125,78,0.18) 0%, transparent 60%),
+                    radial-gradient(ellipse at 20% 80%, rgba(212,168,83,0.12) 0%, transparent 55%),
+                    #3d2b1f;
+        z-index:0;
+      "></div>
+
+      <div class="hero__content">
+        <span class="hero__eyebrow">Welcome to StoryCast</span>
+
+        <h1 class="hero__title" id="hero-heading">
+          Stories That<br />
+          <em>Move&nbsp;You</em>
+        </h1>
+
+        <p class="hero__subtitle">
+          A sanctuary for audio and video storytelling — where artists,
+          musicians, and cultural voices share what it means to be human.
+        </p>
+
+        <div class="hero__actions">
+          <a href="Html/story.html" class="btn btn--primary">
+            <!-- Icon: play -->
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false">
+              <polygon points="2,1 13,7 2,13" fill="currentColor"/>
+            </svg>
+            Listen Now
+          </a>
+          <a href="Html/about.html" class="btn btn--ghost">Our Mission</a>
+        </div>
+      </div>
+
+      <!-- Scroll cue -->
+      <div class="hero__scroll-cue" aria-hidden="true">
+        <span>Scroll</span>
+        <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
+          <rect x="5" y="0" width="4" height="12" rx="2" fill="currentColor" opacity="0.5"/>
+          <path d="M2 14 L7 19 L12 14" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ── FEATURED STORY ─────────────────────────── -->
+    <section class="section section--cream" aria-labelledby="featured-heading">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-heading__label">Featured</span>
+          <h2 class="section-heading__title" id="featured-heading">Editor's Pick</h2>
+          <div class="section-heading__rule" aria-hidden="true"></div>
+        </div>
+
+        <article class="featured-story" aria-label="Featured story: Threads of Time">
+          <div class="featured-story__media">
+            <!-- Decorative image placeholder (would be real image in production) -->
+            <div aria-hidden="true" style="
+              width:100%;height:100%;min-height:360px;
+              background: linear-gradient(135deg, #6b8f71 0%, #4a6b50 40%, #3d2b1f 100%);
+              display:flex;align-items:center;justify-content:center;
+              font-size:4rem;
+            "><figure style="margin-bottom:2.5rem;">
+  <img
+    src="../assests/images/finished_product.jpg"
+    style="width:100%;border-radius:16px;display:block;"
+  />
+  <figcaption style="padding:1rem 1.5rem;font-size:0.8rem;color:#b5a495;font-style:italic;">
+    Amara Diallo at her loom in Bonwire, Ghana — the traditional home of kente weaving.
+    Photo: Kofi Asante / StoryCast.
+  </figcaption>
+</figure></div>
+          </div>
+
+          <div class="featured-story__body">
+            <span class="featured-story__eyebrow">Culture &amp; Arts · Audio Story</span>
+
+            <h3 class="featured-story__title">
+              Threads of Time: Inside West Africa's Living Textile Tradition
+            </h3>
+
+            <p class="featured-story__desc">
+              Master weaver Amara Diallo walks us through five generations of
+              kente — each colour a language, each pattern a memory handed
+              down in thread rather than ink.
+            </p>
+
+            <div class="featured-story__meta">
+              <span>3 min listen</span>
+              <span aria-hidden="true">·</span>
+              <span>Transcript available</span>
+              <span aria-hidden="true">·</span>
+              <span>Captions on</span>
+            </div>
+
+            <a href="/Html/story.html" class="btn btn--primary" style="align-self:flex-start;margin-top:0.5rem;">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false">
+                <polygon points="2,1 13,7 2,13" fill="currentColor"/>
+              </svg>
+              Listen to Story
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── STORY GRID ─────────────────────────────── -->
+    <section class="section" aria-labelledby="stories-heading">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-heading__label">Explore</span>
+          <h2 class="section-heading__title" id="stories-heading">Recent Stories</h2>
+          <div class="section-heading__rule" aria-hidden="true"></div>
+        </div>
+
+        <!-- Filter tags (decorative in this prototype) -->
+        <div role="group" aria-label="Filter stories by category" style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2rem;">
+          <button class="tag" aria-pressed="true">All</button>
+          <button class="tag tag--terracotta" aria-pressed="false">Music</button>
+          <button class="tag tag--ochre" aria-pressed="false">Visual Arts</button>
+          <button class="tag" aria-pressed="false">Performance</button>
+          <button class="tag tag--terracotta" aria-pressed="false">Craft</button>
+        </div>
+
+        <div class="story-grid" role="list">
+
+          <!-- Card 1 -->
+          <article class="card-container" role="listitem">
+            <a href="story/threads-of-time.html" class="story-card" aria-label="Story: Threads of Time — 38 minute audio">
+              <div class="story-card__media">
+                <div aria-hidden="true" style="width:100%;height:100%;background:linear-gradient(135deg,#6b8f71,#3d2b1f);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🎨</div>
+                <span class="story-card__badge">
+                  <span class="media-badge">
+                    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><polygon points="1,1 9,5 1,9" fill="currentColor"/></svg>
+                    Audio
+                  </span>
+                </span>
+              </div>
+              <div class="story-card__body">
+                <div class="story-card__meta">
+                  <span class="tag tag--terracotta">Craft</span>
+                  <span>38 min</span>
+                </div>
+                <h3 class="story-card__title">Threads of Time</h3>
+                <p class="story-card__excerpt">Master weaver Amara Diallo on five generations of kente and the language woven into every thread.</p>
+                <div class="story-card__footer">
+                  <span>Feb 2026</span>
+                  <span>Transcript ✓</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card-container" role="listitem">
+            <a href="story/threads-of-time.html" class="story-card" aria-label="Story: The Sound of Colour — 22 minute video">
+              <div class="story-card__media">
+                <div aria-hidden="true" style="width:100%;height:100%;background:linear-gradient(135deg,#d4a853,#a0572e);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🎵</div>
+                <span class="story-card__badge">
+                  <span class="media-badge">
+                    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1" width="8" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/><polygon points="3.5,3 6.5,5 3.5,7" fill="currentColor"/></svg>
+                    Video
+                  </span>
+                </span>
+              </div>
+              <div class="story-card__body">
+                <div class="story-card__meta">
+                  <span class="tag tag--ochre">Music</span>
+                  <span>22 min</span>
+                </div>
+                <h3 class="story-card__title">The Sound of Colour</h3>
+                <p class="story-card__excerpt">Blind musician Yemi Okonkwo describes how synaesthesia shaped his entire approach to jazz composition.</p>
+                <div class="story-card__footer">
+                  <span>Jan 2026</span>
+                  <span>Captions ✓</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card-container" role="listitem">
+            <a href="story/threads-of-time.html" class="story-card" aria-label="Story: The Clay Memory — 45 minute audio">
+              <div class="story-card__media">
+                <div aria-hidden="true" style="width:100%;height:100%;background:linear-gradient(135deg,#c97d4e,#5c3d2b);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏺</div>
+                <span class="story-card__badge">
+                  <span class="media-badge">
+                    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><polygon points="1,1 9,5 1,9" fill="currentColor"/></svg>
+                    Audio
+                  </span>
+                </span>
+              </div>
+              <div class="story-card__body">
+                <div class="story-card__meta">
+                  <span class="tag">Visual Arts</span>
+                  <span>45 min</span>
+                </div>
+                <h3 class="story-card__title">The Clay Memory</h3>
+                <p class="story-card__excerpt">Ceramicist Fatou Ndiaye on how clay becomes a vessel not just for water, but for ancestral stories.</p>
+                <div class="story-card__footer">
+                  <span>Dec 2025</span>
+                  <span>Transcript ✓</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card-container" role="listitem">
+            <a href="story/threads-of-time.html" class="story-card" aria-label="Story: Naming the Dance — 18 minute video">
+              <div class="story-card__media">
+                <div aria-hidden="true" style="width:100%;height:100%;background:linear-gradient(135deg,#8b7355,#3d2b1f);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">💃</div>
+                <span class="story-card__badge">
+                  <span class="media-badge">
+                    <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1" width="8" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/><polygon points="3.5,3 6.5,5 3.5,7" fill="currentColor"/></svg>
+                    Video
+                  </span>
+                </span>
+              </div>
+              <div class="story-card__body">
+                <div class="story-card__meta">
+                  <span class="tag">Performance</span>
+                  <span>18 min</span>
+                </div>
+                <h3 class="story-card__title">Naming the Dance</h3>
+                <p class="story-card__excerpt">Choreographer Adaeze Eze on the political act of naming traditional movements in a postcolonial world.</p>
+                <div class="story-card__footer">
+                  <span>Nov 2025</span>
+                  <span>Captions ✓</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+        </div><!-- /.story-grid -->
+      </div>
+    </section>
+
+    <!-- ── MISSION STRIP ───────────────────────────── -->
+    <section class="section section--dark" aria-labelledby="mission-strip-heading">
+      <div class="container" style="text-align:center;">
+        <span style="font-family:'Playfair Display SC',Georgia,serif;font-size:0.64rem;letter-spacing:0.2em;text-transform:uppercase;color:#c97d4e;display:block;margin-bottom:1.5rem;">Why StoryCast</span>
+        <h2 id="mission-strip-heading" style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#faf6f0;max-width:18ch;margin:0 auto 1.5rem;line-height:1.25;">
+          Every culture has a sound. We help you hear it.
+        </h2>
+        <p style="color:rgba(240,232,220,0.75);font-size:1.1rem;max-width:52ch;margin:0 auto 2.5rem;line-height:1.85;">
+          StoryCast commissions and archives audio and video stories from
+          artists, craftspeople, and cultural keepers who might otherwise go
+          unheard. All content is free, accessible, and permanently archived.
+        </p>
+        <a href="/Html/about.html" class="btn btn--ghost">Read Our Mission</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════
+       SITE FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <div>
+        <p class="site-footer__brand">Story<span>Cast</span></p>
+        <p class="site-footer__tagline">
+          A platform for audio and video storytelling — celebrating culture,
+          arts, and the unbroken thread of human creativity.
+        </p>
+      </div>
+
+      <nav aria-label="Footer navigation: pages">
+        <p class="site-footer__heading">Pages</p>
+        <ul class="site-footer__links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="story/threads-of-time.html">Stories</a></li>
+          <li><a href="about.html">About &amp; Access</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Footer navigation: accessibility">
+        <p class="site-footer__heading">Accessibility</p>
+        <ul class="site-footer__links" role="list">
+          <li><a href="about.html">Accessibility Statement</a></li>
+          <li><a href="about.html">Transcripts</a></li>
+          <li><a href="about.html">Captions</a></li>
+          <li><a href="about.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <span>© 2026 StoryCast. Content freely available under Creative Commons.</span>
+      <span>Designed with accessibility in mind — WCAG 2.1 AA compliant</span>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      });
+
+      // Close on outside click
+      document.addEventListener('click', (e) => {
+        if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.focus();
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
+

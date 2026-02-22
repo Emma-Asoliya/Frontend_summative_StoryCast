@@ -1,0 +1,34 @@
+// ============================================================
+// StoryCast – Color Tokens
+// Warm & human palette: earthy ochres, terracotta, cream
+// ============================================================
+
+// ── Brand Core ──────────────────────────────────────────────
+$color-terracotta:     #c97d4e;   // primary accent
+$color-terracotta-dk:  #a0572e;   // hover / pressed
+$color-ochre:          #d4a853;   // secondary accent
+$color-earth:          #8b6047;   // midtone earth
+
+// ── Neutrals ────────────────────────────────────────────────
+$color-cream:          #faf6f0;   // page background
+$color-cream-mid:      #f0e8dc;   // card backgrounds
+$color-linen:          #ede0d0;   // borders, subtle fills
+$color-warm-gray:      #b5a495;   // muted text, placeholders
+
+// ── Dark tones ───────────────────────────────────────────────
+$color-bark:           #3d2b1f;   // primary text (dark brown)
+$color-bark-mid:       #5c3d2b;   // secondary text
+$color-bark-lt:        #7a5540;   // tertiary / captions
+
+// ── Greens (story accent) ────────────────────────────────────
+$color-sage:           #6b8f71;   // tags, highlights
+$color-sage-lt:        #d4ead6;   // tag backgrounds
+
+// ── Semantic ────────────────────────────────────────────────
+$color-focus:          #d4a853;   // focus ring (accessible gold)
+$color-error:          #b94040;
+$color-success:        #4a6b50;
+
+// ── Overlays ────────────────────────────────────────────────
+$color-overlay-dark:   rgba(61, 43, 31, 0.72);
+$color-overlay-light:  rgba(250, 246, 240, 0.88);

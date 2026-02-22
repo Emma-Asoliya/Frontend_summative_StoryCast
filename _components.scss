@@ -1,0 +1,610 @@
+// ============================================================
+// StoryCast – Components
+// ============================================================
+
+@use 'colors' as *;
+@use 'typography' as *;
+@use 'spacing' as *;
+
+// ── Site Header / Nav ────────────────────────────────────────
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 246, 240, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid $color-linen;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $container-xl;
+    margin: 0 auto;
+    padding: $space-4 $space-8;
+
+    @media (max-width: 640px) {
+      padding: $space-4;
+    }
+  }
+
+  &__logo {
+    font-family: $font-display;
+    font-size: $text-lg;
+    font-weight: $weight-bold;
+    color: $color-bark;
+    text-decoration: none;
+    letter-spacing: $tracking-tight;
+
+    span {
+      color: $color-terracotta;
+    }
+
+    &:hover { color: $color-bark; }
+  }
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: $space-8;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (max-width: 640px) {
+    gap: $space-5;
+  }
+
+  a {
+    font-family: $font-ui;
+    font-size: $text-sm;
+    letter-spacing: $tracking-widest;
+    text-transform: uppercase;
+    color: $color-bark-mid;
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color $transition-fast, border-color $transition-fast;
+
+    &:hover,
+    &[aria-current="page"] {
+      color: $color-terracotta;
+      border-bottom-color: $color-terracotta;
+    }
+  }
+}
+
+// ── Site Footer ──────────────────────────────────────────────
+.site-footer {
+  background: $color-bark;
+  color: $color-cream-mid;
+  padding: $space-16 $space-8 $space-8;
+
+  &__inner {
+    max-width: $container-xl;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: $space-12;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: $space-8;
+    }
+  }
+
+  &__brand {
+    font-family: $font-display;
+    font-size: $text-xl;
+    font-weight: $weight-bold;
+    color: $color-cream;
+    margin-bottom: $space-4;
+
+    span { color: $color-terracotta; }
+  }
+
+  &__tagline {
+    font-size: $text-sm;
+    color: $color-warm-gray;
+    line-height: $leading-relaxed;
+    max-width: 36ch;
+  }
+
+  &__heading {
+    font-family: $font-ui;
+    font-size: $text-xs;
+    letter-spacing: $tracking-widest;
+    text-transform: uppercase;
+    color: $color-warm-gray;
+    margin-bottom: $space-4;
+  }
+
+  &__links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+
+    a {
+      color: $color-cream-mid;
+      text-decoration: none;
+      font-size: $text-sm;
+      transition: color $transition-fast;
+
+      &:hover { color: $color-terracotta; }
+    }
+  }
+
+  &__bottom {
+    max-width: $container-xl;
+    margin: $space-12 auto 0;
+    padding-top: $space-6;
+    border-top: 1px solid rgba(181, 164, 149, 0.2);
+    font-size: $text-xs;
+    color: $color-warm-gray;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $space-4;
+  }
+}
+
+// ── Buttons ──────────────────────────────────────────────────
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-3 $space-6;
+  font-family: $font-ui;
+  font-size: $text-sm;
+  font-weight: $weight-semibold;
+  letter-spacing: $tracking-wider;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: background $transition-base, color $transition-base, border-color $transition-base, transform $transition-fast, box-shadow $transition-fast;
+
+  &:active { transform: translateY(1px); }
+
+  // Primary
+  &--primary {
+    background: $color-terracotta;
+    color: $color-cream;
+    border-color: $color-terracotta;
+
+    &:hover {
+      background: $color-terracotta-dk;
+      border-color: $color-terracotta-dk;
+      color: $color-cream;
+      box-shadow: $shadow-md;
+    }
+  }
+
+  // Outline
+  &--outline {
+    background: transparent;
+    color: $color-bark;
+    border-color: $color-bark;
+
+    &:hover {
+      background: $color-bark;
+      color: $color-cream;
+    }
+  }
+
+  // Ghost (on dark bg)
+  &--ghost {
+    background: transparent;
+    color: $color-cream;
+    border-color: rgba(250, 246, 240, 0.6);
+
+    &:hover {
+      background: rgba(250, 246, 240, 0.15);
+      border-color: $color-cream;
+    }
+  }
+}
+
+// ── Tag / Category Badge ─────────────────────────────────────
+.tag {
+  display: inline-block;
+  padding: $space-1 $space-3;
+  background: $color-sage-lt;
+  color: $color-success;
+  font-family: $font-ui;
+  font-size: $text-xs;
+  letter-spacing: $tracking-wider;
+  text-transform: uppercase;
+  border-radius: $radius-full;
+  text-decoration: none;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: darken(#d4ead6, 8%);
+  }
+
+  &--ochre {
+    background: rgba(212, 168, 83, 0.15);
+    color: darken(#d4a853, 20%);
+  }
+
+  &--terracotta {
+    background: rgba(201, 125, 78, 0.12);
+    color: $color-terracotta-dk;
+  }
+}
+
+// ── Story Card (Container-Queried) ───────────────────────────
+// Container query: card adapts between horizontal/vertical layout
+// based on its CONTAINER's width, not viewport
+
+.card-container {
+  container-type: inline-size;
+  container-name: story-card;
+}
+
+.story-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: $color-cream-mid;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  transition: box-shadow $transition-base, transform $transition-base;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-3px);
+  }
+
+  &__media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: $color-linen;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-slow;
+    }
+
+    .story-card__badge {
+      position: absolute;
+      top: $space-3;
+      left: $space-3;
+    }
+  }
+
+  &:hover &__media img {
+    transform: scale(1.05);
+  }
+
+  &__body {
+    padding: $space-6;
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    font-family: $font-ui;
+    font-size: $text-xs;
+    color: $color-bark-lt;
+    letter-spacing: $tracking-wide;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $text-md;
+    font-weight: $weight-semibold;
+    line-height: $leading-snug;
+    color: $color-bark;
+    margin: 0;
+  }
+
+  &__excerpt {
+    font-size: $text-sm;
+    color: $color-bark-mid;
+    line-height: $leading-relaxed;
+    margin: 0;
+    max-width: none;
+  }
+
+  &__footer {
+    margin-top: auto;
+    padding-top: $space-4;
+    border-top: 1px solid $color-linen;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $text-xs;
+    color: $color-warm-gray;
+    font-family: $font-ui;
+    letter-spacing: $tracking-wide;
+  }
+
+  // ── Container Query: wide containers → horizontal layout ──
+  @container story-card (min-width: 500px) {
+    grid-template-columns: 280px 1fr;
+
+    .story-card__media {
+      aspect-ratio: auto;
+    }
+
+    .story-card__title {
+      font-size: $text-lg;
+    }
+  }
+}
+
+// ── Media Badge (audio/video indicator) ──────────────────────
+.media-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  padding: $space-1 $space-2;
+  background: rgba(61, 43, 31, 0.75);
+  color: $color-cream;
+  font-family: $font-ui;
+  font-size: $text-xs;
+  letter-spacing: $tracking-wide;
+  border-radius: $radius-sm;
+  backdrop-filter: blur(4px);
+
+  svg { width: 12px; height: 12px; fill: currentColor; }
+}
+
+// ── Section Heading ──────────────────────────────────────────
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: $space-4;
+  margin-bottom: $space-10;
+
+  &__label {
+    font-family: $font-ui;
+    font-size: $text-xs;
+    letter-spacing: $tracking-widest;
+    text-transform: uppercase;
+    color: $color-terracotta;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $text-2xl;
+    font-weight: $weight-bold;
+    color: $color-bark;
+    line-height: $leading-tight;
+  }
+
+  &__rule {
+    flex: 1;
+    height: 1px;
+    background: $color-linen;
+    margin-left: $space-4;
+  }
+}
+
+// ── Transcript Block ─────────────────────────────────────────
+.transcript {
+  background: $color-cream-mid;
+  border-left: 4px solid $color-terracotta;
+  border-radius: 0 $radius-md $radius-md 0;
+  padding: $space-8;
+
+  &__heading {
+    font-family: $font-ui;
+    font-size: $text-xs;
+    letter-spacing: $tracking-widest;
+    text-transform: uppercase;
+    color: $color-terracotta;
+    margin-bottom: $space-6;
+  }
+
+  &__content {
+    font-family: $font-mono;
+    font-size: $text-sm;
+    line-height: $leading-relaxed;
+    color: $color-bark-mid;
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: $space-2;
+
+    &::-webkit-scrollbar { width: 4px; }
+    &::-webkit-scrollbar-track { background: $color-linen; }
+    &::-webkit-scrollbar-thumb { background: $color-warm-gray; border-radius: $radius-full; }
+  }
+
+  &__timestamp {
+    display: inline-block;
+    color: $color-terracotta;
+    font-weight: $weight-bold;
+    margin-right: $space-2;
+    font-size: $text-xs;
+  }
+}
+
+// ── Audio Player (custom styled) ─────────────────────────────
+.audio-player {
+  background: $color-bark;
+  border-radius: $radius-lg;
+  padding: $space-6 $space-8;
+  color: $color-cream;
+  display: flex;
+  align-items: center;
+  gap: $space-6;
+  flex-wrap: wrap;
+
+  audio {
+    width: 100%;
+    accent-color: $color-terracotta;
+
+    &::-webkit-media-controls-panel {
+      background: transparent;
+    }
+  }
+
+  &__label {
+    font-family: $font-ui;
+    font-size: $text-xs;
+    letter-spacing: $tracking-widest;
+    text-transform: uppercase;
+    color: $color-warm-gray;
+    margin-bottom: $space-2;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $text-md;
+    font-weight: $weight-semibold;
+    color: $color-cream;
+  }
+}
+
+// ── Video Figure ─────────────────────────────────────────────
+.video-figure {
+  background: $color-bark;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-xl;
+
+  video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    background: $color-bark;
+  }
+
+  figcaption {
+    padding: $space-4 $space-6;
+    font-size: $text-sm;
+    color: $color-warm-gray;
+    font-style: italic;
+    background: darken(#3d2b1f, 4%);
+  }
+}
+
+// ── Stat / Feature Block ─────────────────────────────────────
+.feature-block {
+  padding: $space-8;
+  background: $color-cream-mid;
+  border-radius: $radius-lg;
+  border: 1px solid $color-linen;
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(201, 125, 78, 0.12);
+    border-radius: $radius-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $space-4;
+    color: $color-terracotta;
+    font-size: $text-xl;
+  }
+
+  &__heading {
+    font-family: $font-display;
+    font-size: $text-md;
+    font-weight: $weight-semibold;
+    margin-bottom: $space-3;
+  }
+
+  &__text {
+    font-size: $text-sm;
+    color: $color-bark-mid;
+    line-height: $leading-relaxed;
+    max-width: none;
+    margin: 0;
+  }
+}
+
+// ── Related Stories ──────────────────────────────────────────
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: $space-6;
+}
+
+// ── Breadcrumb ───────────────────────────────────────────────
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  list-style: none;
+  padding: 0;
+  font-family: $font-ui;
+  font-size: $text-xs;
+  letter-spacing: $tracking-wide;
+  color: $color-warm-gray;
+
+  li + li::before {
+    content: '›';
+    margin-right: $space-2;
+    color: $color-warm-gray;
+  }
+
+  a {
+    color: $color-bark-lt;
+    text-decoration: none;
+    &:hover { color: $color-terracotta; }
+  }
+
+  [aria-current="page"] {
+    color: $color-bark;
+    font-weight: $weight-semibold;
+  }
+}
+
+// ── Accessibility Statement Panel ────────────────────────────
+.a11y-panel {
+  background: $color-sage-lt;
+  border: 1px solid rgba(107, 143, 113, 0.3);
+  border-radius: $radius-lg;
+  padding: $space-8;
+
+  &__heading {
+    font-family: $font-display;
+    font-size: $text-lg;
+    font-weight: $weight-semibold;
+    color: $color-success;
+    margin-bottom: $space-4;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: $space-3;
+      font-size: $text-sm;
+      color: $color-bark-mid;
+
+      &::before {
+        content: '✓';
+        color: $color-success;
+        font-weight: $weight-bold;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+    }
+  }
+}

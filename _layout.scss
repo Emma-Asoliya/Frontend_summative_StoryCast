@@ -1,0 +1,292 @@
+// ============================================================
+// StoryCast – Layout
+// ============================================================
+
+@use 'colors' as *;
+@use 'typography' as *;
+@use 'spacing' as *;
+
+// ── Container ────────────────────────────────────────────────
+.container {
+  width: 100%;
+  max-width: $container-xl;
+  margin-inline: auto;
+  padding-inline: $space-8;
+
+  @media (max-width: 640px) {
+    padding-inline: $space-4;
+  }
+
+  &--narrow {
+    max-width: $container-md;
+  }
+
+  &--wide {
+    max-width: $container-2xl;
+  }
+}
+
+// ── Page Sections ────────────────────────────────────────────
+.section {
+  padding-block: $space-20;
+
+  @media (max-width: 768px) {
+    padding-block: $space-12;
+  }
+
+  &--dark {
+    background: $color-bark;
+    color: $color-cream-mid;
+  }
+
+  &--cream {
+    background: $color-cream-mid;
+  }
+
+  &--linen {
+    background: $color-linen;
+  }
+}
+
+// ── Hero ─────────────────────────────────────────────────────
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: $color-bark;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(
+        135deg,
+        rgba(61, 43, 31, 0.9) 0%,
+        rgba(61, 43, 31, 0.6) 60%,
+        rgba(139, 96, 71, 0.5) 100%
+      );
+    z-index: 1;
+  }
+
+  &__bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.45;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: $container-lg;
+    padding: $space-12 $space-8;
+    text-align: center;
+  }
+
+  &__eyebrow {
+    font-family: $font-ui;
+    font-size: $text-sm;
+    letter-spacing: $tracking-widest;
+    text-transform: uppercase;
+    color: $color-terracotta;
+    margin-bottom: $space-6;
+    display: block;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: $weight-bold;
+    color: $color-cream;
+    line-height: $leading-tight;
+    margin-bottom: $space-6;
+    letter-spacing: $tracking-tight;
+  }
+
+  &__subtitle {
+    font-family: $font-body;
+    font-size: $text-md;
+    color: rgba(240, 232, 220, 0.85);
+    line-height: $leading-relaxed;
+    max-width: 52ch;
+    margin: 0 auto $space-10;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-4;
+    flex-wrap: wrap;
+  }
+
+  &__scroll-cue {
+    position: absolute;
+    bottom: $space-8;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: rgba(240, 232, 220, 0.5);
+    font-family: $font-ui;
+    font-size: $text-xs;
+    letter-spacing: $tracking-widest;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-2;
+    animation: scrollBob 2s ease-in-out infinite;
+  }
+}
+
+@keyframes scrollBob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+// ── Featured Story (large card) ──────────────────────────────
+.featured-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: $color-cream-mid;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  box-shadow: $shadow-xl;
+  min-height: 480px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__media {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(240, 232, 220, 0.1) 100%
+      );
+    }
+  }
+
+  &__body {
+    padding: $space-12;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: $space-4;
+
+    @media (max-width: 640px) {
+      padding: $space-8;
+    }
+  }
+
+  &__eyebrow {
+    font-family: $font-ui;
+    font-size: $text-xs;
+    letter-spacing: $tracking-widest;
+    text-transform: uppercase;
+    color: $color-terracotta;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $text-2xl;
+    font-weight: $weight-bold;
+    line-height: $leading-snug;
+    color: $color-bark;
+  }
+
+  &__desc {
+    color: $color-bark-mid;
+    line-height: $leading-relaxed;
+    max-width: 42ch;
+    margin: 0;
+  }
+
+  &__meta {
+    font-family: $font-ui;
+    font-size: $text-xs;
+    letter-spacing: $tracking-wide;
+    color: $color-warm-gray;
+    display: flex;
+    gap: $space-4;
+  }
+}
+
+// ── Story Grid ───────────────────────────────────────────────
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-8;
+
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ── Story Detail Layout ──────────────────────────────────────
+.story-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: $space-12;
+  max-width: $container-xl;
+  margin: 0 auto;
+  padding: $space-12 $space-8;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 640px) {
+    padding: $space-8 $space-4;
+  }
+}
+
+.story-main {
+  min-width: 0; // prevent overflow in grid
+}
+
+.story-sidebar {
+  @media (max-width: 960px) {
+    order: -1;
+  }
+}
+
+// ── About Page Grid ──────────────────────────────────────────
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-12;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: $space-6;
+}
